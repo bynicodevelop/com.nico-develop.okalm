@@ -1,5 +1,4 @@
 import 'package:com_nico_develop_relax/screens/home_screen.dart';
-import 'package:com_nico_develop_relax/screens/settings/parameters_screen.dart';
 import 'package:flutter/material.dart';
 
 // final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
