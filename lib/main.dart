@@ -1,63 +1,8 @@
-import 'package:com_nico_develop_relax/screens/home_screen.dart';
+import 'package:com_nico_develop_relax/screens/settings/payment_screen.dart';
 import 'package:flutter/material.dart';
-
-// final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-//     FlutterLocalNotificationsPlugin();
-
-// final BehaviorSubject<ReceivedNotification> didReceiveLocalNotificationSubject =
-//     BehaviorSubject<ReceivedNotification>();
-
-// class ReceivedNotification {
-//   ReceivedNotification({
-//     required this.id,
-//     required this.title,
-//     required this.body,
-//     required this.payload,
-//   });
-
-//   final int id;
-//   final String? title;
-//   final String? body;
-//   final String? payload;
-// }
-
-// Future<void> _configureLocalTimeZone() async {
-//   tz.initializeTimeZones();
-//   final String? timeZoneName = await FlutterNativeTimezone.getLocalTimezone();
-//   tz.setLocalLocation(tz.getLocation(timeZoneName!));
-// }
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // _configureLocalTimeZone();
-
-  // // await flutterLocalNotificationsPlugin.cancelAll();
-
-  // await flutterLocalNotificationsPlugin.initialize(
-  //   InitializationSettings(
-  //       iOS: IOSInitializationSettings(onDidReceiveLocalNotification: (
-  //     int id,
-  //     String? title,
-  //     String? body,
-  //     String? payload,
-  //   ) async {
-  //     print("coucou");
-  //     didReceiveLocalNotificationSubject.add(
-  //       ReceivedNotification(
-  //         id: id,
-  //         title: title,
-  //         body: body,
-  //         payload: payload,
-  //       ),
-  //     );
-  //   })),
-  //   onSelectNotification: (String? payload) async {
-  //     if (payload != null) {
-  //       debugPrint('notification payload: $payload');
-  //     }
-  //   },
-  // );
 
   runApp(const App());
 }
@@ -113,13 +58,14 @@ class App extends StatelessWidget {
           child: child!,
         );
       },
-      home: LayoutBuilder(builder: (context, constraints) {
-        final double height = MediaQuery.of(context).size.height;
+      home: const PaymentScreen(),
+      // home: LayoutBuilder(builder: (context, constraints) {
+      //   final double height = MediaQuery.of(context).size.height;
 
-        return HomeScreen(
-          height: height,
-        );
-      }),
+      //   return HomeScreen(
+      //     height: height,
+      //   );
+      // }),
     );
   }
 }

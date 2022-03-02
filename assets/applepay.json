@@ -1,0 +1,13 @@
+{
+  "provider": "apple_pay",
+  "data": {
+    "merchantIdentifier": "merchant.com.nico-develop",
+    "displayName": "Nicolas MORICET",
+    "merchantCapabilities": ["3DS", "debit", "credit"],
+    "supportedNetworks": ["amex", "visa", "discover", "masterCard"],
+    "countryCode": "FR",
+    "currencyCode": "EUR",
+    "requiredBillingContactFields": null,
+    "requiredShippingContactFields": null
+  }
+}
