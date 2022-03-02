@@ -4,6 +4,7 @@ import 'package:com_nico_develop_relax/repositories/settings_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
+import 'package:keep_screen_on/keep_screen_on.dart';
 
 class CalmScreen extends StatefulWidget {
   final double height;
@@ -38,6 +39,8 @@ class _CalmScreenState extends State<CalmScreen> with TickerProviderStateMixin {
   int countdown = 3;
 
   Future<void> startCalm() async {
+    KeepScreenOn.turnOn();
+
     final int duration = (await SettingsRepository.getDuration()).toInt();
 
     setState(
@@ -52,10 +55,14 @@ class _CalmScreenState extends State<CalmScreen> with TickerProviderStateMixin {
 
     Future.delayed(
       _duration,
-      () => setState(() {
-        _started = false;
-        _countdownStarted = false;
-      }),
+      () {
+        KeepScreenOn.turnOff();
+
+        setState(() {
+          _started = false;
+          _countdownStarted = false;
+        });
+      },
     );
   }
 
